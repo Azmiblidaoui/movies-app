@@ -1,0 +1,125 @@
+.filter {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+}
+
+.filter h2 {
+  margin-bottom: 1.5rem;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-icon {
+  font-size: 1.2rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.filter-group input::placeholder {
+  color: #999;
+}
+
+.rating-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.star-preview {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.star-filter {
+  color: #666;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.star-filter.filled {
+  color: #ffd700;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: end;
+}
+
+.reset-btn {
+  background: transparent;
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.reset-btn:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .filter-controls {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .filter-group {
+    min-width: auto;
+  }
+  
+  .rating-filter-container {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+}
