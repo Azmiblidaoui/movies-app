@@ -67,6 +67,21 @@ const Filter = ({ filters = {}, onFiltersChange, years = [], genres = [] }) => {
           </div>
         </div>
 
+        <div className="filter-group">
+          <label>
+            <span className="filter-icon">📅</span>
+            Year
+          </label>
+          <select
+            value={filters.year || ''}
+            onChange={(e) => handleFilterChange('year', e.target.value)}
+          >
+            <option value="">All years</option>
+            {years.map(year => (
+              <option key={year} value={year}>{year}</option>
+            ))}
+          </select>
+        </div>
 
         <div className="filter-group">
           <label>

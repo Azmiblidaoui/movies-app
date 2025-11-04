@@ -8,7 +8,8 @@ const AddMovieModal = ({ isOpen, onClose, onAddMovie, years = [], genres = [] })
     description: '',
     rating: 1,
     year: new Date().getFullYear(),
-    genre: 'Drama'
+    genre: 'Drama',
+    trailerURL: ''
   });
 
   const handleSubmit = (e) => {
@@ -21,7 +22,8 @@ const AddMovieModal = ({ isOpen, onClose, onAddMovie, years = [], genres = [] })
         description: '',
         rating: 1,
         year: new Date().getFullYear(),
-        genre: 'Drama'
+        genre: 'Drama',
+        trailerURL: ''
       });
     }
   };
@@ -73,6 +75,16 @@ const AddMovieModal = ({ isOpen, onClose, onAddMovie, years = [], genres = [] })
               value={newMovie.description}
               onChange={(e) => handleChange('description', e.target.value)}
               rows="4"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Trailer URL (YouTube Embed)</label>
+            <input
+              type="text"
+              placeholder="Enter YouTube embed URL (e.g., https://www.youtube.com/embed/VIDEO_ID)"
+              value={newMovie.trailerURL}
+              onChange={(e) => handleChange('trailerURL', e.target.value)}
             />
           </div>
           

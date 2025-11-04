@@ -1,14 +1,22 @@
 import React from 'react';
-import './MovieCard.css';  
+import { useNavigate } from 'react-router-dom';
+import './MovieCard.css';
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
+
   if (!movie) {
     return null;
   }
+
   const title = movie.title || movie.name || 'Unknown Title';
   const description = movie.description || 'No description available';
   const posterURL = movie.posterURL || movie.posterurl || '';
   const rating = movie.rating || 0;
+
+  const handleClick = () => {
+    navigate(`/movie/${movie.id}`);
+  };
 
   const renderStars = (rating) => {
     return (
@@ -21,7 +29,7 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={handleClick}>
       <div className="movie-poster">
         <img src={posterURL || 'https://via.placeholder.com/300x400/333/666?text=No+Image'} alt={title} />
         <div className="movie-overlay">
